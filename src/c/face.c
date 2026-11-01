@@ -452,12 +452,6 @@ static void draw_frame(Layer *layer, GContext *ctx) {
   draw_digit(ctx, d2, r2, kind, wall, fill, progress);
   draw_digit(ctx, d3, r3, kind, wall, fill, progress);
 
-  // Rising "print" surface line across the digit band.
-  int fill_y = start_y + digit_h - (digit_h * progress) / 1000;
-  graphics_context_set_stroke_color(ctx, fill);
-  graphics_context_set_stroke_width(ctx, 1);
-  graphics_draw_line(ctx, GPoint(start_x, fill_y), GPoint(start_x + total_w - 1, fill_y));
-
   graphics_context_set_text_color(ctx, color_caption());
   char line[36];
   snprintf(line, sizeof(line), "%s  ·  %d/59", infill_name(kind), s_minute);
