@@ -46,3 +46,12 @@ Import `dist/Infill-Clock-cloudpebble.zip` into CloudPebble (or rebuild it with
 - **Infill height** — progress through the hour (empty near `:00`, full by `:59`).
 - **Infill pattern** — changes each hour: lines → honeycomb → gyroid → triangles.
 - **Infill color** — changes on the hour (color watches).
+
+## Settings
+
+Open the gear icon next to Infill Clock in the Pebble phone app:
+
+- **Time** — 12h / 24h / system, leading zero
+- **Date** — show/hide and format
+- **Display** — pattern caption, lock pattern or keep auto-by-hour
+- **Colors** (color watches) — background, walls, caption, auto/custom infill

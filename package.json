@@ -1,20 +1,47 @@
 {
   "name": "infill-clock",
   "author": "caffeinegamer",
-  "version": "1.0.0",
-  "keywords": ["pebble-app", "watchface", "3d-printing", "infill"],
+  "version": "1.1.0",
+  "keywords": [
+    "pebble-app",
+    "watchface",
+    "3d-printing",
+    "infill"
+  ],
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@rebble/clay": "^1.1.0"
+  },
   "pebble": {
     "displayName": "Infill Clock",
     "uuid": "c8e41a27-9f3b-4d6e-a812-7b5c0e94d1f6",
     "sdkVersion": "3",
-    "enableMultiJS": false,
-    "targetPlatforms": ["emery", "basalt", "diorite", "flint"],
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "emery",
+      "basalt",
+      "diorite",
+      "flint"
+    ],
     "watchapp": {
       "watchface": true
     },
-    "capabilities": [],
+    "capabilities": [
+      "configurable"
+    ],
+    "messageKeys": [
+      "TimeFormat",
+      "LeadingZero",
+      "ShowDate",
+      "DateFormat",
+      "ShowCaption",
+      "PatternMode",
+      "BackgroundColor",
+      "WallColor",
+      "CaptionColor",
+      "FillMode",
+      "FillColor"
+    ],
     "resources": {
       "media": [
         {

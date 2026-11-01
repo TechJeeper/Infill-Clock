@@ -35,7 +35,7 @@ if ($Shell) {
     exit $LASTEXITCODE
 }
 
-$cmd = "$setup && pebble build"
+$cmd = "$setup && (test -d node_modules/@rebble/clay || pebble package install @rebble/clay) && pebble build"
 if ($Phone) { $cmd += " && pebble install --phone $Phone" }
 & $engine @run $image bash -c $cmd
 if ($LASTEXITCODE -ne 0) { throw 'Build failed.' }

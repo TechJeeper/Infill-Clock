@@ -1,9 +1,12 @@
 #include <pebble.h>
 #include "face.h"
+#include "settings.h"
 
 static Window *s_window;
 
 static void on_tick(struct tm *tick_time, TimeUnits units_changed) {
+  (void)tick_time;
+  (void)units_changed;
   face_tick();
 }
 
@@ -12,10 +15,13 @@ static void window_load(Window *window) {
 }
 
 static void window_unload(Window *window) {
+  (void)window;
   face_deinit();
 }
 
 static void init(void) {
+  settings_init();
+
   s_window = window_create();
   window_set_window_handlers(s_window, (WindowHandlers){
     .load = window_load,
@@ -28,6 +34,7 @@ static void init(void) {
 static void deinit(void) {
   tick_timer_service_unsubscribe();
   window_destroy(s_window);
+  settings_deinit();
 }
 
 int main(void) {
