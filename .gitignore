@@ -1,0 +1,8 @@
+build/
+dist/
+.lock-waf*
+node_modules/
+__pycache__/
+assets/raw/
+.env
+.env.*
